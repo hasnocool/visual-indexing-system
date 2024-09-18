@@ -1,44 +1,68 @@
-# Visual-Indexing-System
+# Visual Indexing System
+=====================================
 
-## Overview
-Visual-Indexing-System is a comprehensive solution for building an efficient and effective visual search system. It encompasses two key components: ImageSearchIndex and ImageFinder. Together, they provide a powerful framework for indexing images, performing visual searches, and retrieving similar images based on advanced image analysis techniques.
+Hey there, fellow developer! I'm super excited to share my latest project - the **Visual Indexing System** (VIS). This project is a showcase of how computer vision and indexing can be used together to create an efficient way to search for similar images.
+
+## Project Title
+---------------
+
+The Visual Indexing System is an open-source Python library that uses deep learning models to extract features from images and then indexes them using the Annoy library. This allows for fast and efficient retrieval of similar images based on their visual content.
+
+## Description
+-------------
+
+I built this to create a system where I could quickly find similar images in my photo library, but it can be used for any type of image collection. The VIS uses a pre-trained ResNet50 model to extract features from images, which are then indexed using Annoy. This allows for fast and efficient retrieval of similar images based on their visual content.
+
+One cool feature is the ability to search for similar images in parallel using multi-threading, making it possible to index thousands of images quickly.
 
 ## Features
-- ImageSearchIndex:
-  - Image Indexing: Efficiently index a large collection of images for similarity searches.
-  - Feature Extraction: Extract and analyze key visual features from images using advanced algorithms.
-  - Index Optimization: Utilize indexing techniques to optimize search performance and accuracy.
+------------
 
-- ImageFinder:
-  - Visual Search: Perform intuitive visual searches by providing a query image or selecting from the indexed dataset.
-  - Similar Image Display: Retrieve and display a list of similar images based on visual similarity to the query.
-  - Query Refinement: Refine search results by adjusting similarity thresholds or applying additional filters.
-  - Image Details and Bookmarking: View detailed information about retrieved images and bookmark images of interest.
+* **Deep Learning-based Feature Extraction**: Uses a pre-trained ResNet50 model to extract features from images.
+* **Annoy Indexing**: Indexes the extracted features using Annoy, allowing for fast and efficient retrieval of similar images.
+* **Multi-threading Support**: Allows for parallel search and indexing of images.
 
-## Getting Started
-To work with the Visual-Indexing-System, follow these steps:
+## Installation
+--------------
 
-1. Clone or download the repository:
+To install the VIS, simply run the following command:
 
-`git clone https://github.com/your-username/Visual-Indexing-System.git`
+```bash
+pip install tensorflow annoy pillow
+```
 
-2. Install the required dependencies:
-
-`pip install -r requirements.txt`
-
-3. Explore the project documentation to understand the architecture, usage, and implementation details of both components.
+Then clone this repository and navigate to the `visual-indexing-system` directory. You can then run the code using Python 3.x.
 
 ## Usage
-### ImageSearchIndex
-1. Image Collection: Gather a dataset of images that you want to index for similarity searches.
-2. Feature Extraction: Extract relevant visual features from the images, such as color histograms, local descriptors, or deep learning embeddings.
-3. Index Creation: Build an index data structure, such as a k-d tree or an approximate nearest neighbor search index, to facilitate efficient similarity searches.
+---------
 
-### ImageFinder
-1. Visual Search: Initiate a visual search by providing a query image or selecting from the indexed dataset.
-2. Similar Image Results: View and explore the list of similar images retrieved based on visual similarity to the query image.
-3. Refinement Options: Fine-tune your search results by adjusting similarity thresholds or applying additional filters to meet your specific needs.
-4. Image Details and Bookmarking: Access detailed information about retrieved images, such as metadata or associated tags, and bookmark images of interest for future reference.
+To use the VIS, you'll need to create a directory of thumbnails and then build an index using the `build_index.py` script. Once the index is built, you can search for similar images using the `search_similiarity_index.py` script.
+
+Here's some example code:
+
+```python
+# Build an index on a directory of thumbnails
+python build_index.py --thumbnails_dir './thumbnails' --num_trees 10
+
+# Search for similar images in the index
+python search_similiarity_index.py --target_image_path './thumbnails/(m=qU5WO7XbeafTGgaaaa)(mh=kIWhRaJVkXVhtyzm)0.jpg'
+```
+
+## Contributing
+--------------
+
+Contributions are more than welcome! If you'd like to contribute to the VIS, please fork this repository and submit a pull request.
 
 ## License
-This project, including both ImageSearchIndex and ImageFinder components, is licensed under the MIT License. Refer to the LICENSE file in the project root for more information.
+--------
+
+The Visual Indexing System is released under the MIT license. See `LICENSE.md` for details.
+
+## Tags/Keywords
+----------------
+
+[Computer Vision], [Indexing], [Deep Learning], [Multi-threading], [Python]
+
+---
+
+This README was written by yours truly, hasnocool. I hope you find it helpful!
